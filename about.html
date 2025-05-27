@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+</head>
+
+<body>
+    <div class="toolbar">
+        <ul>
+            <li><a href="../index.html">Welcome</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a class="active" href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="box" id="box2">
+            <h2>About this Website & Me</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Template for the introductory text -->
+        <script id="intro-text-template" type="text/x-handlebars-template">
+            <div class="box" id="box2">
+                <p>{{introParagraph1}}</p>
+                <p>{{introParagraph2}}</p>
+            </div>
+        </script>
+        <!-- Container to render intro text -->
+        <div id="intro-text-container"></div>
+    </div>
+
+    <div class="container">
+        <h2 id="large-mid-text">Latest Fav Musician</h2>
+    </div>
+
+    <div class="container">
+        <!-- Template for latest musician -->
+        <script id="latest-musician-template" type="text/x-handlebars-template">
+            <div class="box" id="box1">
+                <div id="pulled-pic-container">
+                    <img src="{{pfpURL}}" alt="Profile Picture of {{userName}}" style="max-width: 500px;" />
+                </div>
+                <p style="font-size: medium; color: chocolate;" id="date">Date added: {{dateAdded}}</p>
+                <p id="medium-mid-text"><strong>{{userName}}</strong></p>
+                <p id="medium-mid-text"><strong>Favorite song:</strong> {{favSong}}</p>
+                <p id="medium-mid-text">(Genre: {{genre}})</p>
+            </div>
+        </script>
+        <!-- Container to render latest musician -->
+        <div id="latest-musician-container"></div>
+    </div>
+
+    <div class="container">
+        <!-- Template for comments -->
+        <script id="comments-template" type="text/x-handlebars-template">
+            <div class="box" id="box-comments">
+                <h3>Comment your thoughts!</h3>
+                {{#each comments}}
+                <div class="comment-box">
+                    <span class="comment-date">{{date}}</span>
+                    <br>
+                    <strong>{{name}}</strong>
+                    <hr />
+                    <p>{{message}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </script>
+
+        <!-- Template for comment form -->
+        <script id="comment-form-template" type="text/x-handlebars-template">
+            <div class="box" id="box-comments">
+            <form id="comment-form">
+                <h3>Add Your Comment</h3>
+                <label for="name-input">Name:</label><br />
+                <input type="text" id="name-input" name="name" required /><br /><br />
+
+                <label for="message-input">Comment:</label><br />
+                <textarea id="message-input" name="message" rows="4" required></textarea><br /><br />
+
+                <button type="submit" id="post-button">Post comment</button>
+            </form>
+            </div>
+        </script>
+
+        <div id="comments-container"></div>
+    </div>
+
+    <div class="footer">
+        <p>My socials!</p>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Bluesky</a></li>
+            <li><a href="#">Github</a></li>
+        </ul>
+    </div>
+
+    <script type="module" src="../scripts/moreInfo.js"></script>
+    <script type="module" src="../scripts/comments.js"></script>
+    <script src="../scripts/index.js"></script>
+</body>
+
+</html>

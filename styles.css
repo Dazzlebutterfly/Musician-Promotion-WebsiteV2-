@@ -1,0 +1,352 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 5%;
+}
+
+#large-mid-text {
+  color: wheat;
+  font-size: 40px;
+}
+
+#medium-mid-text {
+  color: wheat;
+  font-size: 20px;
+}
+
+#pulled-pic-container {
+  gap: 30px;
+  padding: 20px;
+  width: 50wh;
+  margin: 0 auto;
+}
+
+.box {
+  width: 500px;
+  font-size: 2em;
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.box img {
+  max-width: 100%;
+  height: 200px;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../res/images/cdd20-zlpST4Dkja8-unsplash.jpg');
+}
+
+.toolbar {
+  width: 100%;
+  height: 8vh;
+  font-size: 2em;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgb(87, 71, 39);
+}
+
+
+.toolbar li {
+  list-style-type: none;
+  display: inline;
+  padding: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.toolbar a {
+  text-decoration: none;
+  color: rgb(239, 148, 21);
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.toolbar a:hover {
+  text-decoration: none;
+  color: rgb(239, 101, 21);
+}
+
+#caption-bar {
+  width: 50%;
+  height: 80px;
+  text-align: center;
+  border-radius: 50px;
+  ;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#000), to(rgba(1, 1, 1, 0)));
+}
+
+
+.footer {
+  width: 100%;
+  height: 100px;
+  font-size: 1.5em;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgb(118, 81, 42);
+}
+
+.footer li {
+  list-style-type: none;
+  display: inline;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.footer a {
+  text-decoration: none;
+  color: rgb(239, 148, 21);
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: rgb(239, 101, 21);
+}
+
+#box1 {
+  background-color: rgb(32, 30, 24);
+}
+
+#box2 {
+  width: 1200px;
+  background-color: rgb(239, 148, 21);
+}
+
+#box3 {
+  background-color: rgb(32, 30, 24);
+}
+
+#box4 {
+  background-color: rgb(239, 148, 21);
+  width: 70%;
+}
+
+.container:has(#add-musician, #musicians-container) {
+  flex-direction: column;
+}
+
+#add-musician {
+  display: flex;
+  gap: 5px;
+  padding: 20px;
+  color: wheat;
+  margin: 0 auto;
+}
+
+#add-musician input {
+  padding: 4px 4px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  width: 100px;
+  height: 20px;
+}
+
+#add-musician input:focus {
+  border-color: #c27e0a;
+  border-radius: 8px;
+}
+
+#add-musician button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  color: wheat;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#add-button {
+  background-color: rgb(147, 184, 68);
+}
+
+#edit-button {
+  background-color: rgb(184, 171, 68);
+}
+#post-button {
+  background-color: rgb(184, 136, 68);
+}
+#remove-button {
+  background-color: rgb(184, 93, 68);
+}
+
+#add-button:hover {
+  background-color: rgb(74, 201, 43);
+}
+
+#edit-button:hover {
+  background-color: rgb(247, 218, 0);
+}
+
+#remove-button:hover {
+  background-color: rgb(194, 36, 36);
+}
+
+#box-comments {
+  background-color: #c27e0a;
+  width: 800px;
+  border-radius: 0%;
+}
+
+.comment-box {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  font-size:large;
+  text-align: left;
+}
+
+#comment-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#comment-form input[type="text"],
+#comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.6rem;
+  margin-bottom: 1em;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#comment-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+
+.comment-date {
+  font-size: 0.5em;
+  color: gray;
+}
+
+#musicians-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 900px;
+  /* 3 x 300px = 900px */
+  margin: 0 auto;
+}
+
+.musician-card {
+  /** The card container for both images and text*/
+  background-color: wheat;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(118, 81, 42);
+}
+
+.musician-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: filter 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.musician-image:hover {
+  filter: brightness(1.2);
+  /* Increase brightness by 20% */
+}
+
+.musician-name {
+  margin: 8px 0 4px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.musician-text {
+  margin: 4px 0;
+  font-size: 1em;
+  color: rgb(118, 81, 42);
+}
+
+/** Navigation stuffs*/
+
+.toolbar a:hover {
+  background-color: rgb(120, 92, 36);
+  color: wheat;
+}
+
+.toolbar a.active {
+  background-color: rgb(184, 145, 68);
+  color: rgb(87, 71, 39);
+}
+
+.toolbar input[type=text] {
+  padding: 8px 10px;
+  margin-top: 8px;
+  font-size: 0.8em;
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+
+  .toolbar a,
+  .toolbar input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+
+  .toolbar input[type=text] {
+    border: 1px solid wheat;
+  }
+}
+
+.toolbar .search-container {
+  float: right;
+}
+
+.toolbar .search-container button {
+  /** Second class specialisation nessecary because we have to overwrite the existing properties*/
+  float: right;
+  padding: 12px 20px;
+  margin-top: 8px;
+  margin-right: 16px;
+  margin-left: 16px;
+  background: rgb(184, 145, 68);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.toolbar .search-container button:hover {
+  background: rgb(239, 148, 21);
+}
+
+.hidden {
+  display: none;
+}

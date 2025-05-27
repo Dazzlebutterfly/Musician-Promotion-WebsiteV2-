@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicians</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+</head>
+
+<body>
+    <div class="toolbar">
+        <ul>
+            <li><a href="../index.html">Welcome</a></li>
+            <li><a class="active" href="musicians.html">Musicians</a></li>
+            <li><a href="about.html">About</a></li>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by name...">
+                <button id="search-button"><i class="fa fa-search"></i></button>
+            </div>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2 style="color: wheat; font-size: large; text-align: center;">Add your favourite musicians to the list or
+            remove those you don't like from the list!</h2>
+        <div id="add-musician">
+            <label for="userName">Username:</label><br>
+            <input type="text" id="userName" name="userName"><br>
+            <label for="pfpURL">Genre</label><br>
+            <input type="text" id="genre" name="genre"><br>
+            <label for="pfpURL">Profile pic url:</label><br>
+            <input type="text" id="pfpURL" name="pfpURL"><br>
+            <label for="pfpURL">Favourite song:</label><br>
+            <input type="text" id="favSong" name="favSong"><br>
+            <br>
+            <button id="add-button">Add</button>
+            <button id="edit-button">Edit</button>
+            <button id="remove-button">Remove</button>
+        </div>
+        <!-- Handlebars template for the musicians array -->
+        <script id="musician-template" type="text/x-handlebars-template">
+      {{#each musicians}}  <!--For each element of the array-->
+      <div class="musician-card">
+        <img
+          src="{{pfpURL}}"
+          alt="An image depicting {{userName}}"
+          class="musician-image"
+        />
+        <h1 class="musician-name">{{userName}}</h1>
+        <p class="musician-text"><strong>Genre: </strong>{{genreOfMusic}}</p>
+        <p class="musician-text"><strong>My Favourite Song: </strong>"{{favSong}}"</p>
+      </div>
+      {{/each}} <!--For each attribute of an element of the array-->
+
+      {{#unless musicians.length}}  <!--In case there are no musicians in the array-->
+      <p class="musician-text no-match-message">No musicians found.</p>
+      {{/unless}}
+    </script>
+        <div id="musicians-container"></div>
+    </div>
+    </div>
+    <div class="footer">
+        <p>My socials!</p>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Bluesky</a></li>
+            <li><a href="#">Github</a></li>
+        </ul>
+    </div>
+    <script src="../scripts/index.js"></script>
+    <script type="module" src="../scripts/datamanip.js"></script> <!-- Fill the container with the object array file-->
+</body>
+
+</html>
